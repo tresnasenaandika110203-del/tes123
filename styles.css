@@ -59,3 +59,11 @@ body.dark-mode .category-tag.neutral{background:#252e3b;color:#c3cddd;border-col
 .category-legend{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:0 19px 14px}
 .legend-title{font-size:10px;color:var(--muted);font-weight:800;margin-right:2px}
 @media(max-width:680px){.category-legend{padding:0 13px 12px}.category-legend .category-tag{font-size:9px}}
+
+/* Pengelolaan opsi form obat */
+.option-list{display:grid;gap:5px;max-height:145px;overflow:auto;margin:7px 0 8px;padding:1px}
+.option-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);border-radius:7px;padding:5px 8px;background:var(--panel);font-size:11px;color:var(--ink)}
+.option-delete-icon{width:23px;height:23px;flex:0 0 23px;border:0;border-radius:6px;background:var(--red-soft);color:var(--red);font-size:17px;line-height:1}
+.option-manage-btn{border:1px dashed #b8c8c3;background:transparent;color:var(--green);border-radius:7px;padding:7px 9px;font-size:11px;font-weight:700}
+.confirm-card{max-width:390px}.confirm-card p{font-size:13px;color:var(--muted);padding:12px 0 20px;margin:0}
+.btn-danger{background:var(--red);border-color:var(--red);color:#fff}
