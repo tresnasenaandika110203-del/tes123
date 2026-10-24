@@ -67,17 +67,20 @@ body.dark-mode .category-tag.neutral{background:#252e3b;color:#c3cddd;border-col
 .option-manage-btn{border:1px dashed #b8c8c3;background:transparent;color:var(--green);border-radius:7px;padding:7px 9px;font-size:11px;font-weight:700}
 .confirm-card{max-width:390px}.confirm-card p{font-size:13px;color:var(--muted);padding:12px 0 20px;margin:0}
 .btn-danger{background:var(--red);border-color:var(--red);color:#fff}
-/* Option management controls live inside the same scrollable choice box. */
-.option-picker{border:1px solid #dfe4ed;border-radius:9px;background:#fff;overflow:hidden}
-.option-picker-scroll{max-height:174px;overflow-y:auto;padding:5px;overscroll-behavior:contain}
+/* Opsi tampil saat pemilih dibuka; pengelolaan ada di dalam panel scroll yang sama. */
+.option-picker-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);padding:11px 13px;font-size:12px;min-height:40px}
+.option-picker-trigger:hover,.option-picker-trigger[aria-expanded="true"]{border-color:var(--green)}
+.option-chevron{color:var(--muted);font-size:15px;flex:0 0 auto}
+.option-picker{margin-top:5px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);overflow:hidden;box-shadow:0 8px 22px rgba(15,23,42,.08)}
+.option-picker-scroll{max-height:174px;overflow-y:auto;padding:5px;overscroll-behavior:contain;background:var(--panel)}
 .option-choice{display:flex;align-items:center;gap:6px;border-radius:7px;padding:2px}
-.option-choice:hover{background:#f5faf8}
+.option-choice:hover{background:var(--green-soft)}
 .option-choice.selected{background:var(--green-soft)}
 .option-select-choice{flex:1;min-width:0;text-align:left;border:0;background:transparent;color:var(--ink);padding:8px 9px;font-size:12px;border-radius:6px}
 .option-select-choice span{float:right;color:var(--green);font-weight:800}
-.option-manage-btn{display:block;width:100%;text-align:left;border:0;border-top:1px solid var(--line);border-radius:0;background:#f8fafc;color:var(--green);font-weight:800;font-size:11px;padding:10px 9px;margin-top:4px}
+.option-manage-btn{display:block;width:100%;text-align:left;border:0;border-top:1px solid var(--line);border-radius:0;background:var(--panel);color:var(--green);font-weight:800;font-size:11px;padding:10px 9px;margin-top:4px}
 .option-manage-btn:hover{background:var(--green-soft)}
-.option-current{font-size:10px;color:var(--muted);margin-top:6px}
-.option-current b{color:var(--ink);font-weight:700}
 .option-delete-icon{width:24px;height:24px;flex:0 0 24px;border:0;border-radius:6px;background:var(--red-soft);color:var(--red);font-size:17px;line-height:1}
 .option-delete-icon:hover{background:var(--red);color:#fff}
+body.dark-mode .option-picker-trigger,body.dark-mode .option-picker,body.dark-mode .option-picker-scroll,body.dark-mode .option-manage-btn{background:var(--panel);color:var(--ink);border-color:var(--line)}
+body.dark-mode .option-choice:hover,body.dark-mode .option-choice.selected,body.dark-mode .option-manage-btn:hover{background:var(--green-soft)}
