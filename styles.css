@@ -36,3 +36,26 @@ body.dark-mode .modal-header,body.dark-mode .modal-actions{border-color:var(--li
 body.dark-mode .profile-trigger:hover,body.dark-mode .profile-trigger[aria-expanded="true"]{background:#222b38;border-color:var(--line)}body.dark-mode .profile-dropdown{background:var(--panel);border-color:var(--line)}
 body.dark-mode .form-stack input:focus,body.dark-mode .field input:focus,body.dark-mode .field select:focus,body.dark-mode .field textarea:focus,body.dark-mode .select-control:focus{border-color:var(--green);box-shadow:0 0 0 3px #42c5a018}
 @media(max-width:680px){.theme-toggle{padding:8px}.theme-toggle-label{display:none}.profile-trigger{gap:4px;padding:3px}.profile-trigger-name{display:none}.profile-chevron{display:none}.topbar-right{gap:7px}.profile-dropdown{right:0;width:220px}}
+
+/* Label kategori obat mengikuti legenda warna dari Excel Apotek Finka. */
+.category-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border-radius:7px;font-size:10px;font-weight:800;white-space:nowrap;border:1px solid transparent}
+.category-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
+.category-tag.red{background:#ffeded;color:#b4232f;border-color:#ffd1d5}
+.category-tag.yellow{background:#fff6cc;color:#86620a;border-color:#f3df87}
+.category-tag.blue{background:#e8efff;color:#315ab5;border-color:#cddaff}
+.category-tag.green{background:#e2f7e9;color:#187346;border-color:#bce9cb}
+.category-tag.purple{background:#f0e6ff;color:#6e35a5;border-color:#ddc7ff}
+.category-tag.neutral{background:#f0f2f6;color:#586174;border-color:#e0e4eb}
+.option-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.option-manage-btn{border:1px solid var(--line);background:var(--panel);color:var(--green);border-radius:6px;padding:5px 7px;font-size:10px;font-weight:700;cursor:pointer}
+.option-manage-btn.remove{color:#b4232f}
+.option-manage-btn:hover{filter:brightness(.97);border-color:currentColor}
+body.dark-mode .category-tag.red{background:#44272d;color:#ff9ba2;border-color:#63333b}
+body.dark-mode .category-tag.yellow{background:#44391e;color:#f8d875;border-color:#665222}
+body.dark-mode .category-tag.blue{background:#202e4c;color:#9bb5ff;border-color:#344a76}
+body.dark-mode .category-tag.green{background:#173b35;color:#80dfaa;border-color:#285d48}
+body.dark-mode .category-tag.purple{background:#342448;color:#d3b1ff;border-color:#543b70}
+body.dark-mode .category-tag.neutral{background:#252e3b;color:#c3cddd;border-color:#394454}
+.category-legend{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:0 19px 14px}
+.legend-title{font-size:10px;color:var(--muted);font-weight:800;margin-right:2px}
+@media(max-width:680px){.category-legend{padding:0 13px 12px}.category-legend .category-tag{font-size:9px}}

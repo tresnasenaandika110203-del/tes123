@@ -1,21 +1,30 @@
-# FinkaCare — Perbaikan integrasi Supabase
+# FinkaCare — Pembaruan Form Obat dan Legenda Kategori
 
-Paket ini berisi pembaruan untuk `app.js` dan `index.html` agar cocok dengan skema database Apotek Finka yang menggunakan `stok_tersedia`, `satuan_dasar`, `batch_id`, `kontak`, dan `created_at`.
+## File yang diperbarui
+- `index.html`
+- `app.js`
+- `styles.css`
 
 ## Cara memasang
-1. Unduh ZIP ini dan ekstrak.
-2. Ganti `app.js` dan `index.html` di repository GitHub dengan file dari paket ini.
-3. **Jangan mengganti `config.js`** jika file tersebut sudah berisi Project URL dan Publishable Key milik proyek Supabase kamu.
-4. Commit dan push ke GitHub; tunggu Vercel selesai deploy.
-5. Buka website, login, uji memuat dashboard, lalu tekan Logout.
-6. Refresh halaman: aplikasi seharusnya kembali ke halaman login.
+1. Unduh ZIP pembaruan.
+2. Ekstrak ZIP.
+3. Ganti file `index.html`, `app.js`, dan `styles.css` pada repository GitHub FinkaCare dengan file dari ZIP.
+4. **Jangan mengganti atau menghapus `config.js` yang sudah aktif**, karena file itu berisi konfigurasi Supabase milik aplikasi Anda.
+5. Commit/push ke GitHub lalu tunggu deployment Vercel selesai.
 
 ## Perubahan
-- Riwayat mutasi membaca `created_at`, bukan kolom yang tidak ada `tanggal_mutasi`.
-- Tabel detail penerimaan tidak diurutkan berdasarkan `created_at`, karena kolom itu tidak ada di tabel tersebut.
-- Nama kolom stok, satuan, relasi batch, dan kontak supplier diselaraskan dengan skema yang diberikan.
-- RPC stok keluar memakai parameter `p_batch_id`, `p_jumlah`, `p_referensi`, dan `p_catatan`.
-- Sesi autentikasi hanya disimpan selama halaman masih terbuka (`persistSession: false`), sehingga refresh meminta login lagi.
-- Tombol Logout menangani hasil/error dan mengakhiri sesi lokal.
+- Kategori, bentuk sediaan, dan satuan stok menjadi dropdown.
+- Opsi dropdown dapat ditambah atau dihapus. Daftar opsi tersimpan di browser yang digunakan (localStorage), sehingga pengaturan opsi tidak otomatis berpindah ke browser/perangkat lain.
+- Batas minimum stok menjadi opsional.
+- Harga jual diformat dengan pemisah ribuan titik saat diketik, tetapi disimpan sebagai angka.
+- Form obat mencakup nomor batch dan tanggal kedaluwarsa. Saat obat baru disimpan, sistem membuat batch awal dengan stok 0; stok masuk tetap dicatat lewat menu Stok Masuk.
+- Kategori ditampilkan sebagai label warna dengan keterangan:
+  - Merah: Obat Keras
+  - Kuning: Jamu / Obat Herbal Terstandar
+  - Biru (termasuk variasi warna biru): Obat Bebas Terbatas
+  - Hijau dan toska pada sumber Excel: Obat Bebas (ditampilkan sebagai label hijau)
+  - Ungu: Alat Kesehatan
 
-Catatan: perubahan ini belum diuji langsung ke proyek Supabase kamu. Setelah deploy, uji login, tambah data obat, tambah supplier, stok masuk, stok keluar, dan logout sebelum digunakan untuk pencatatan apotek sebenarnya.
+## Catatan teknis
+- Pembaruan ini memakai nama kolom Supabase yang saat ini digunakan oleh aplikasi, termasuk `batch_obat.stok_tersedia`.
+- Saat mengedit obat, nomor batch dan tanggal kedaluwarsa yang ditampilkan adalah batch pertama yang ditemukan untuk obat tersebut. Batch lain dikelola melalui fitur penerimaan/stok masuk.
