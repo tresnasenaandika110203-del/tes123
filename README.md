@@ -1,39 +1,21 @@
-# FinkaCare — Apotek Finka Inventory
+# FinkaCare — Perbaikan integrasi Supabase
 
-Aplikasi HTML/CSS/JavaScript statis yang menggunakan Supabase Auth dan Supabase Database. Tidak memerlukan build step; cocok untuk deploy ke Vercel sebagai static site.
+Paket ini berisi pembaruan untuk `app.js` dan `index.html` agar cocok dengan skema database Apotek Finka yang menggunakan `stok_tersedia`, `satuan_dasar`, `batch_id`, `kontak`, dan `created_at`.
 
-## 1. Konfigurasi Supabase
+## Cara memasang
+1. Unduh ZIP ini dan ekstrak.
+2. Ganti `app.js` dan `index.html` di repository GitHub dengan file dari paket ini.
+3. **Jangan mengganti `config.js`** jika file tersebut sudah berisi Project URL dan Publishable Key milik proyek Supabase kamu.
+4. Commit dan push ke GitHub; tunggu Vercel selesai deploy.
+5. Buka website, login, uji memuat dashboard, lalu tekan Logout.
+6. Refresh halaman: aplikasi seharusnya kembali ke halaman login.
 
-1. Buka `config.js`.
-2. Ganti `PASTE_SUPABASE_PROJECT_URL_HERE` dengan Project URL di Supabase → Project Settings → API.
-3. Ganti `PASTE_SUPABASE_PUBLISHABLE_KEY_HERE` dengan **publishable key**. Jangan pernah gunakan `service_role` atau secret key pada frontend.
-4. Commit perubahan ke GitHub; Vercel akan deploy otomatis.
+## Perubahan
+- Riwayat mutasi membaca `created_at`, bukan kolom yang tidak ada `tanggal_mutasi`.
+- Tabel detail penerimaan tidak diurutkan berdasarkan `created_at`, karena kolom itu tidak ada di tabel tersebut.
+- Nama kolom stok, satuan, relasi batch, dan kontak supplier diselaraskan dengan skema yang diberikan.
+- RPC stok keluar memakai parameter `p_batch_id`, `p_jumlah`, `p_referensi`, dan `p_catatan`.
+- Sesi autentikasi hanya disimpan selama halaman masih terbuka (`persistSession: false`), sehingga refresh meminta login lagi.
+- Tombol Logout menangani hasil/error dan mengakhiri sesi lokal.
 
-## 2. Akun admin
-
-Buat kedua akun dari Supabase → Authentication → Users → Add user. Gunakan email dan password berbeda. Nonaktifkan public sign-ups bila tersedia di pengaturan Auth. Aplikasi ini tidak menyediakan pendaftaran akun publik.
-
-## 3. Tabel yang dipakai
-
-Aplikasi mengharapkan tabel berikut dengan kolom yang umum digunakan oleh skema awal FinkaCare:
-
-- `obat`: `id`, `kode_obat`, `nama_obat`, `kategori`, `bentuk_sediaan`, `satuan`, `stok_minimum`, `harga_beli`, `harga_jual`, `created_at`, `updated_at`
-- `batch_obat`: `id`, `obat_id`, `nomor_batch`, `tanggal_kedaluwarsa`, `stok_awal`, `stok_saat_ini`, `harga_beli`, `created_at`
-- `supplier`: `id`, `nama_supplier`, `alamat`, `telepon`, `email`, `created_at`
-- `penerimaan`: `id`, `supplier_id`, `nomor_faktur`, `tanggal_penerimaan`, `catatan`, `created_by`, `created_at`
-- `detail_penerimaan`: `id`, `penerimaan_id`, `batch_obat_id`, `jumlah`, `harga_beli`
-- `mutasi_stok`: `id`, `batch_obat_id`, `jenis_mutasi`, `jumlah`, `tanggal_mutasi`, `referensi`, `catatan`, `created_by`, `created_at`
-
-Pastikan nama kolom di project Supabase kamu cocok dengan daftar ini. Jika berbeda, sesuaikan `app.js` atau kirimkan struktur kolom aktual untuk penyesuaian.
-
-## 4. Kebijakan akses (RLS) dan transaksi
-
-Buka file `supabase_setup.sql`, tinjau nama kolomnya, lalu jalankan di Supabase SQL Editor. Skrip mengaktifkan RLS dan memberi hak CRUD kepada role `authenticated` pada keenam tabel—artinya kedua akun yang dapat login sama-sama menjadi admin. Skrip juga membuat fungsi transaksi stok masuk/keluar yang memperbarui saldo dan mencatat mutasi dalam satu transaksi database. Jalankan hanya setelah memastikan nama tabel dan kolom cocok dengan database yang sudah kamu buat. Jangan mengaktifkan akses `anon` untuk data inventaris.
-
-## 5. Deploy Vercel
-
-Pastikan `index.html`, `styles.css`, `app.js`, dan `config.js` berada di root repository. Framework preset bisa `Other`; build command dikosongkan, output directory `.`. Setelah push, cek domain Vercel.
-
-## Catatan integritas transaksi
-
-Penerimaan dan pengeluaran menggunakan PostgreSQL RPC dari `supabase_setup.sql` agar perubahan saldo dan catatan mutasi dijalankan secara atomik. Tetap verifikasi nama kolom dan kebijakan RLS sebelum memakai data persediaan nyata.
+Catatan: perubahan ini belum diuji langsung ke proyek Supabase kamu. Setelah deploy, uji login, tambah data obat, tambah supplier, stok masuk, stok keluar, dan logout sebelum digunakan untuk pencatatan apotek sebenarnya.
