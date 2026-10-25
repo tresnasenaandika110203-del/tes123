@@ -110,3 +110,26 @@ body.dark-mode .table-sort-button:hover,body.dark-mode .table-sort-button:focus-
 .form-section-title{font-size:12px;font-weight:800;color:var(--green);padding-top:6px}
 body.dark-mode .receipt-detail-grid>div{background:#111822;border-color:var(--line)}
 @media(max-width:680px){.receipt-detail-grid{grid-template-columns:1fr}.receipt-detail-grid .receipt-detail-note{grid-column:auto}}
+
+/* Form penerimaan multi-obat */
+.modal-card:has(.incoming-table-wrap){width:min(1000px,100%)}
+.incoming-table-wrap{min-width:0}
+.incoming-table-scroll{overflow:visible;border:1px solid var(--line);border-radius:10px}
+.incoming-entry-table{table-layout:fixed;white-space:normal}
+.incoming-entry-table th{padding:11px 9px;font-size:10px;letter-spacing:.2px}
+.incoming-entry-table td{padding:8px;vertical-align:top}
+.incoming-entry-table th:nth-child(1){width:18%}.incoming-entry-table th:nth-child(2){width:34%}.incoming-entry-table th:nth-child(3){width:16%}.incoming-entry-table th:nth-child(4){width:22%}.incoming-entry-table th:nth-child(5){width:10%}
+.incoming-entry-table input:not([type=hidden]){width:100%;min-width:0;padding:10px 8px;font-size:11px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.incoming-medicine-field{position:relative;min-width:0}
+.incoming-medicine-field .option-picker-trigger{min-width:0;width:100%;padding:10px 8px;font-size:11px}
+.incoming-medicine-field .option-picker-trigger span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.incoming-medicine-field .option-picker{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:90;min-width:240px}
+.incoming-add-row{margin-top:10px}
+.field-help{font-size:10px;color:var(--muted);margin:8px 0 0}
+.danger-action{color:#bd4545!important;border-color:#f0caca!important}
+body.dark-mode .incoming-entry-table input:not([type=hidden]){background:#111822;border-color:var(--line);color:var(--ink)}
+@media(max-width:680px){.modal-card:has(.incoming-table-wrap){width:100%}.incoming-table-scroll{overflow:auto}.incoming-entry-table{min-width:760px}.incoming-entry-table th,.incoming-entry-table td{padding:7px}}
+.receipt-detail-grid .receipt-detail-items{grid-column:1/-1;display:grid;gap:10px;overflow:hidden}
+.receipt-detail-items .table-scroll{width:100%;overflow:auto}
+.receipt-detail-items table{white-space:normal;min-width:520px}
+.receipt-detail-items th,.receipt-detail-items td{padding:9px 10px}
