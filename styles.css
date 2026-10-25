@@ -133,3 +133,10 @@ body.dark-mode .incoming-entry-table input:not([type=hidden]){background:#111822
 .receipt-detail-items .table-scroll{width:100%;overflow:auto}
 .receipt-detail-items table{white-space:normal;min-width:520px}
 .receipt-detail-items th,.receipt-detail-items td{padding:9px 10px}
+
+/* Form kode obat otomatis */
+.generated-code-control{display:flex;align-items:stretch;gap:8px}
+.generated-code-control input{flex:1;min-width:0}
+.generated-code-control .btn{white-space:nowrap;flex-shrink:0}
+.generated-code-field .field-help{display:block;line-height:1.5}
+@media(max-width:480px){.generated-code-control{flex-direction:column}.generated-code-control .btn{align-self:flex-start}}
