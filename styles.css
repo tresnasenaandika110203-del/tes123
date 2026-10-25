@@ -140,3 +140,22 @@ body.dark-mode .incoming-entry-table input:not([type=hidden]){background:#111822
 .generated-code-control .btn{white-space:nowrap;flex-shrink:0}
 .generated-code-field .field-help{display:block;line-height:1.5}
 @media(max-width:480px){.generated-code-control{flex-direction:column}.generated-code-control .btn{align-self:flex-start}}
+
+/* Scrollbar minimalis: track transparan dan thumb tipis agar tidak menutupi konten. */
+*{scrollbar-width:thin;scrollbar-color:rgba(125,139,157,.42) transparent}
+*::-webkit-scrollbar{width:6px;height:6px}
+*::-webkit-scrollbar-track{background:transparent}
+*::-webkit-scrollbar-thumb{background:rgba(125,139,157,.38);border-radius:99px;border:1px solid transparent;background-clip:padding-box}
+*::-webkit-scrollbar-thumb:hover{background:rgba(100,116,139,.62);background-clip:padding-box}
+body.dark-mode{scrollbar-color:rgba(148,163,184,.36) transparent}
+body.dark-mode *::-webkit-scrollbar-track{background:transparent}
+body.dark-mode *::-webkit-scrollbar-thumb{background:rgba(148,163,184,.32);background-clip:padding-box}
+body.dark-mode *::-webkit-scrollbar-thumb:hover{background:rgba(148,163,184,.55);background-clip:padding-box}
+
+/* Satuan stok ditampilkan sebagai keterangan kecil di bawah nama obat. */
+.medicine-unit{font-size:10px;line-height:1.4;color:var(--muted);font-weight:500}
+
+/* Pastikan tombol X pada opsi yang bisa dikelola terlihat jelas dan tidak menyusut. */
+.option-choice{min-width:0}
+.option-delete-icon{display:inline-flex;align-items:center;justify-content:center;visibility:visible;opacity:1;flex:0 0 25px;width:25px;height:25px;padding:0;border:1px solid color-mix(in srgb,var(--red) 20%,transparent);border-radius:6px;background:var(--red-soft);color:var(--red);font-size:18px;font-weight:500;line-height:1;cursor:pointer}
+.option-delete-icon:hover{background:var(--red);border-color:var(--red);color:#fff}
