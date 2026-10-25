@@ -176,3 +176,37 @@ body.dark-mode .option-picker .option-search-wrap,body.dark-mode .option-picker 
 
 /* Riwayat penerimaan: rentang tanggal */
 .date-range-separator{font-size:10px;color:var(--muted);white-space:nowrap}.receipt-date-filters input[type=date]{min-width:145px;max-width:165px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px}@media(max-width:780px){.receipt-date-filters{flex-wrap:wrap}.receipt-date-filters input[type=date]{flex:1;min-width:0;max-width:none}.date-range-separator{padding:0 2px}}
+
+/* Form edit penerimaan dengan tabel yang konsisten dan layout kasir */
+.incoming-edit-table{min-width:760px}
+.incoming-edit-table .incoming-medicine-field{min-width:190px}
+.cashier-modal-card{width:min(1120px,100%)}
+.cashier-modal-card .modal-fields{display:block}
+.cashier-modal-card #modalFields>.cashier-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:18px}
+.cashier-catalog,.cashier-checkout{min-width:0;border:1px solid var(--line);border-radius:13px;background:var(--panel);padding:15px}
+.cashier-section-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cashier-section-heading h3{font-size:14px;margin:0;color:var(--ink)}
+.cashier-section-heading p{font-size:10px;color:var(--muted);margin:4px 0 0}
+.cashier-search{max-width:none;min-width:0;margin-bottom:12px;background:var(--bg)}
+.cashier-product-list{display:grid;gap:8px;max-height:380px;overflow:auto;padding-right:3px}
+.cashier-product{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px;background:var(--panel)}
+.cashier-product-info{display:grid;gap:4px;min-width:0}
+.cashier-product-info strong{font-size:12px;color:var(--ink);overflow-wrap:anywhere}
+.cashier-product-info span,.cashier-product-info small{font-size:10px;color:var(--muted)}
+.cashier-product-info small{font-weight:800;color:var(--green)}
+.cashier-empty{padding:25px 12px;text-align:center;color:var(--muted);font-size:12px}
+.cashier-cart-wrap{max-height:310px;overflow:auto;border:1px solid var(--line);border-radius:9px}
+.cashier-cart-table{min-width:430px;width:100%}
+.cashier-cart-table th{background:var(--bg);padding:9px;font-size:9px}
+.cashier-cart-table td{padding:9px;font-size:10px;vertical-align:middle}
+.cashier-cart-table td strong{display:block;font-size:10px;color:var(--ink);white-space:normal;max-width:170px}
+.cashier-cart-table input{width:66px;min-width:55px;padding:7px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink)}
+.cashier-total-line{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
+.cashier-total-line strong{font-size:22px;color:var(--green);font-variant-numeric:tabular-nums}
+.cashier-meta-fields{display:grid;grid-template-columns:1fr;gap:10px;padding-top:13px}
+.cashier-meta-fields .field{gap:5px}
+.cashier-meta-fields .field label{display:grid;gap:6px;color:var(--muted)}
+.cashier-checkout>.field-help{display:block;line-height:1.5;margin-top:12px}
+body.dark-mode .cashier-catalog,body.dark-mode .cashier-checkout,body.dark-mode .cashier-product{background:var(--panel);border-color:var(--line)}
+body.dark-mode .cashier-search{background:var(--bg)}
+@media(max-width:800px){.cashier-modal-card #modalFields>.cashier-layout{grid-template-columns:1fr}.cashier-product-list{max-height:240px}.cashier-cart-wrap{max-height:260px}}
