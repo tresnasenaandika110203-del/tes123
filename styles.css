@@ -84,3 +84,11 @@ body.dark-mode .category-tag.neutral{background:#252e3b;color:#c3cddd;border-col
 .option-delete-icon:hover{background:var(--red);color:#fff}
 body.dark-mode .option-picker-trigger,body.dark-mode .option-picker,body.dark-mode .option-picker-scroll,body.dark-mode .option-manage-btn{background:var(--panel);color:var(--ink);border-color:var(--line)}
 body.dark-mode .option-choice:hover,body.dark-mode .option-choice.selected,body.dark-mode .option-manage-btn:hover{background:var(--green-soft)}
+
+/* Pencarian di dalam panel pilihan yang dapat di-scroll. */
+.option-search-wrap{position:sticky;top:0;z-index:2;padding:3px 2px 7px;background:var(--panel)}
+.option-search{display:block;width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);padding:8px 9px;font-size:11px;outline:none}
+.option-search:focus{border-color:var(--green);box-shadow:0 0 0 2px var(--green-soft)}
+.option-choice-list{display:flex;flex-direction:column;gap:2px}
+.option-choice.hidden{display:none}
+body.dark-mode .option-search{background:#111822;color:var(--ink);border-color:var(--line)}
