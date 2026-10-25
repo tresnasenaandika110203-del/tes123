@@ -45,6 +45,8 @@ body.dark-mode .form-stack input:focus,body.dark-mode .field input:focus,body.da
 .category-tag.blue{background:#e8efff;color:#315ab5;border-color:#cddaff}
 .category-tag.green{background:#e2f7e9;color:#187346;border-color:#bce9cb}
 .category-tag.purple{background:#f0e6ff;color:#6e35a5;border-color:#ddc7ff}
+.category-tag.orange{background:#fbe6d2;color:#a94e0b;border-color:#f4c69d}
+.category-tag.teal{background:#d5f5f2;color:#087d78;border-color:#9be2db}
 .category-tag.neutral{background:#f0f2f6;color:#586174;border-color:#e0e4eb}
 .option-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
 .option-manage-btn{border:1px solid var(--line);background:var(--panel);color:var(--green);border-radius:6px;padding:5px 7px;font-size:10px;font-weight:700;cursor:pointer}
@@ -55,6 +57,8 @@ body.dark-mode .category-tag.yellow{background:#44391e;color:#f8d875;border-colo
 body.dark-mode .category-tag.blue{background:#202e4c;color:#9bb5ff;border-color:#344a76}
 body.dark-mode .category-tag.green{background:#173b35;color:#80dfaa;border-color:#285d48}
 body.dark-mode .category-tag.purple{background:#342448;color:#d3b1ff;border-color:#543b70}
+body.dark-mode .category-tag.orange{background:#482f20;color:#ffbd8a;border-color:#714528}
+body.dark-mode .category-tag.teal{background:#173d3b;color:#8ce4dc;border-color:#286461}
 body.dark-mode .category-tag.neutral{background:#252e3b;color:#c3cddd;border-color:#394454}
 .category-legend{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:0 19px 14px}
 .legend-title{font-size:10px;color:var(--muted);font-weight:800;margin-right:2px}
