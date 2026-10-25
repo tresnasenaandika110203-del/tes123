@@ -100,3 +100,13 @@ body.dark-mode .option-search{background:#111822;color:var(--ink);border-color:v
 .sort-indicator{display:inline-block;min-width:10px;font-size:10px}
 body.dark-mode .table-sort-button{color:var(--muted)}
 body.dark-mode .table-sort-button:hover,body.dark-mode .table-sort-button:focus-visible{background:var(--green-soft);color:var(--green)}
+
+/* Detail penerimaan stok masuk */
+.receipt-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;width:100%;grid-column:1/-1}
+.receipt-detail-grid>div{display:grid;gap:5px;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);min-width:0}
+.receipt-detail-grid span{font-size:10px;color:var(--muted);font-weight:700}
+.receipt-detail-grid strong{font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.receipt-detail-grid .receipt-detail-note{grid-column:1/-1}
+.form-section-title{font-size:12px;font-weight:800;color:var(--green);padding-top:6px}
+body.dark-mode .receipt-detail-grid>div{background:#111822;border-color:var(--line)}
+@media(max-width:680px){.receipt-detail-grid{grid-template-columns:1fr}.receipt-detail-grid .receipt-detail-note{grid-column:auto}}
