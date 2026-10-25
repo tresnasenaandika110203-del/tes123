@@ -210,3 +210,9 @@ body.dark-mode .option-picker .option-search-wrap,body.dark-mode .option-picker 
 body.dark-mode .cashier-catalog,body.dark-mode .cashier-checkout,body.dark-mode .cashier-product{background:var(--panel);border-color:var(--line)}
 body.dark-mode .cashier-search{background:var(--bg)}
 @media(max-width:800px){.cashier-modal-card #modalFields>.cashier-layout{grid-template-columns:1fr}.cashier-product-list{max-height:240px}.cashier-cart-wrap{max-height:260px}}
+
+/* Riwayat transaksi kasir dan tombol nota */
+#outgoingRows td { vertical-align: middle; }
+#outgoingRows .btn { white-space: nowrap; }
+.incoming-edit-table td:last-child { width: 48px; text-align: center; }
+.incoming-edit-table .danger-action { min-width: 32px; }
