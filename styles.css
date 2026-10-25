@@ -92,3 +92,11 @@ body.dark-mode .option-choice:hover,body.dark-mode .option-choice.selected,body.
 .option-choice-list{display:flex;flex-direction:column;gap:2px}
 .option-choice.hidden{display:none}
 body.dark-mode .option-search{background:#111822;color:var(--ink);border-color:var(--line)}
+
+
+/* Tombol pengurutan tabel */
+.table-sort-button{display:inline-flex;align-items:center;justify-content:center;gap:5px;margin-left:5px;padding:2px 4px;border:0;border-radius:4px;background:transparent;color:var(--muted);font:inherit;font-size:10px;line-height:1;cursor:pointer;vertical-align:middle}
+.table-sort-button:hover,.table-sort-button:focus-visible{background:var(--green-soft);color:var(--green);outline:none}
+.sort-indicator{display:inline-block;min-width:10px;font-size:10px}
+body.dark-mode .table-sort-button{color:var(--muted)}
+body.dark-mode .table-sort-button:hover,body.dark-mode .table-sort-button:focus-visible{background:var(--green-soft);color:var(--green)}
