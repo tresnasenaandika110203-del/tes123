@@ -1,5 +1,11 @@
 # FinkaCare — pembaruan form obat dan opsi dropdown
 
+## Tanggal penerimaan boleh kosong
+- Form tambah/ubah memakai label `Tanggal penerimaan` tanpa tanda wajib. Tanggal kosong dikirim sebagai `NULL`; tanggal pilihan dikirim tanpa perubahan.
+- Jalankan seluruh `migration_tanggal_penerimaan_opsional.sql` di Supabase SQL Editor untuk mengizinkan NULL dan menghapus penggantian otomatis menjadi `current_date` pada fungsi penerimaan yang dikenali. Deployment Vercel tidak menjalankan migrasi database.
+- Jika migrasi membatalkan transaksi karena definisi fungsi tidak dikenali, jalankan query pemeriksaan di akhir file dan gunakan hasilnya untuk menyesuaikan fungsi aktif. Jangan jalankan ulang skrip setup lama: skrip tersebut masih menggunakan tanggal hari ini sebagai pengganti tanggal kosong.
+- Setelah migrasi berhasil, simpan penerimaan baru dengan tanggal kosong dan buka Detail/Ubah: tanggal harus tetap kosong. Tanggal pada data yang sudah tersimpan tidak dihapus oleh migrasi.
+
 ## Isi paket
 - `index.html`, `app.js`, `styles.css`: aplikasi dengan pembaruan form obat.
 - `config.js`: konfigurasi Supabase yang sebelumnya diunggah, dipertahankan agar aplikasi tetap terhubung.
